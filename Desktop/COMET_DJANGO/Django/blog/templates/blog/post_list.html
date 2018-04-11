@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<div class="page-header">
+    <h1><a href="/">KickStarter DataSet</a></h1>
+</div>
+        <div>{% load static %} <img src="{% static 'images/SuccessQuantity.png' %}"/></div>  
+        <div>{% load static %} <img src="{% static 'images/FailQuantity.png' %}"/></div>  
+        <p>Film and video is the top kickstarter main category because it can have a lot of sub categories like romance, documentary,horror ,sci-fi and many more.</p>
+        
+        <p>Tech has the highest amount<br/>  
+            Main Category by rank:<br/>
+            1.Dance- highest passing rate(65.44%) (B)<br/>
+             2.Theater-(63.60%)(B)<br/>
+             3.Comics -(59.14%)(B)<br/>
+             4.Music-Top in the quantity of success by main category but also third in most failures so in the end  it has (52.66%) passing rate(A)</b>
+                 5.Arts-(44.89%)<br/>
+                 6.Games-(43.89%)<br/>
+                7.Film and video-(41.79%)(B)<br/>
+                8.Design-(41.59%)<br/>
+                9.Publishing-(34.70%)<br/>
+                10.Photography-(34.11%)<br/>
+                11.Fashion-(28.28%)<br/>
+                12.Food-(27.59%)<br/>
+                13.Crafts-(27.05%)<br/>
+                14.Journalism-(24.39%)<br/>
+                15.Technology -lowest passing rate(23.79%)<br/>
+            
+           <b> Condition A- Many success and Many failures so the pass to fail rate is 40-60 or 50-50</b><br/>
+            <b>Condition B- few entries but the failure rate is much less than passing rate</b> <br/>
+            </p>
+        <div>{% load static %} <img src="{% static 'images/MC_rates.png' %}"/></div>  
+        <p>With total of 3573 number of projects Dance has the least amount of projects in a main category</p>
+        The main category tech has the lowest passing rate <br/>
+        <div>{% load static %} <img src="{% static 'images/TC_rates.png' %}"/></div>
+        <div>{% load static %} <img src="{% static 'images/LC_rates.png' %}"/></div>
+        <p>Apps and video games have low pasing rate in relation to it's main category that also has low passing rate</p>  
+        <div>{% load static %} <img src="{% static 'images/FailQuantity.png' %}"/></div> 
+        <div>{% load static %} <img src="{% static 'images/Duration_rates.png' %}"/></div> 
+        <p>Suprisingly the more the more longer the duration for the project the lesser the success rate</p>  
+        <div>{% load static %} <img src="{% static 'images/QUANTITy_country.png' %}"/></div>   
+        <p>Hong Kong had the highest success rate among all the other countries, with US in second place.
+            One likely reason why Hong Kong surpassed all the other countries is because there are no laws regulating crowdfunding activities in Hong Kong, unlike the other regions. (Source: https://www.floship.com/need-know-hong-kong-crowdfunding/)</p>
+        <div>{% load static %} <img src="{% static 'images/RAISED_COUNTRY.png' %}"/></div>   
+        <p>The US had the highest total amount of money raised on the platform, which may be attributed to its number of launched projects from the country.</p>
+        <div>{% load static %} <img src="{% static 'images/TOP_COUNTRY_RATES.png' %}"/></div>
+        <p>Hong Kong had the highest success rate among all the other countries, with US in second place.
+            One likely reason why Hong Kong surpassed all the other countries is because there are no laws regulating crowdfunding activities in Hong Kong, unlike the other regions. (Source: https://www.floship.com/need-know-hong-kong-crowdfunding/)</p>  
+        <div>{% load static %} <img src="{% static 'images/BACKERS.png' %}"/></div>    
+        <p>As expected, the higher amount of backers a project has, the higher its chances of success are.</p>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                         
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+    //RTYPE
+        ISA.add(new Instruction("DSUBU", new int[] {3,1,2}, "6-5-5-5-5-6",new String[]{"000000", "RS", "RT", "RD", "00000", "101111"}, "SUB", "RD", "RS-RT"));
+        ISA.add(new Instruction("DDIVU", new int[] {3,1,2}, "6-5-5-5-5-6",new String[]{"000000", "RS", "RT", "RD", "00010", " 011111"}, "DIV", "RD", "RS/RT"));
+      
+      //I-Type (6-5-5-16)
+        ISA.add(new Instruction("BGEZ ", new int[] {1,3}, "6-5-5-16",new String[]{"000001", "RS", "00001", "OFF"}, "SUB", "RS", "RS>=0"));
+        ISA.add(new Instruction("BLTZ ", new int[] {1,3}, "6-5-5-16",new String[]{"000001", "RS", "00000", "OFF"}, "SUB", "RS", "RS<0"));
+      //I-Type (6-5-21)
+        ISA.add(new Instruction("BEQZC", new int[] {1,2}, "6-5-21",new String[]{"110110", "RS", "OFF"}, "SUB", "RS", "RS = 0 "));
+        ISA.add(new Instruction("BNEZC", new int[] {1,2}, "6-5-21",new String[]{"111110", "RS", "OFF"}, "BLTHANZC", "RS", "RS != 0 "));
+      // J-Type (6-26)
+        ISA.add(new Instruction("BALC", new int[] {1}, "6-26",new String[]{"111010", "OFF"}, "SUB", "R31", "R31 ? PC+4* "));
+        ISA.add(new Instruction("BC", new int[] {1}, "6-26",new String[]{"110010", "OFF"}, "SUB", "PC", " PC + sign_extend(offset<<2)"));
+       
